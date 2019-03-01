@@ -1,0 +1,122 @@
+/**
+ * Responsive container
+ */
+ .qt-container {
+    //@include container-fixed($grid-gutter-width);
+  
+    // @media (min-width: $screen-sm-min) {
+    //   width: $container-sm;
+    // }
+   
+  }
+  
+  /**
+   * Reset attributes of default SharePoint seattle master page to allow it to be customised for responsiveness
+   */
+  #s4-bodyContainer {
+    padding-bottom: 0;
+  }
+  
+  #contentRow {
+    @include clearfix;
+    padding-top: $grid-gutter-width * .5;
+  }
+  
+  body.nexus-nintex {
+    #contentRow {
+      width: 100% !important;
+    }
+  
+    #contentBox {
+       width: auto !important;
+       float: none;
+    }
+  }
+  
+  body:not(.nexus-edit-mode):not(.nexus-nintex):not(.ms-fullscreenmode) {
+    #contentRow {
+     @extend .qt-container;
+    }
+  
+    @media (max-width: $screen-sm-max) {
+      #sideNavBox {
+        display: none;
+      }
+    }
+  }
+  
+  /*
+   * Set side navigation and primary content area proportions
+   */
+  body:not(.nexus-nintex):not(.ms-fullscreenmode) {
+     #sideNavBox {
+      @extend .column;
+      @include reset-sp-tableCol;
+      @include make-sp-col(3, 3, 12, 12, 0);
+      padding-top: ($grid-gutter-width * .375);
+      padding-right: $grid-gutter-width;
+  
+      .nexus-home-page & {
+        display: none;
+      }
+  
+      .nexus-nintex-form & {
+        float: none;
+      }
+  
+      .ms-core-sideNavBox-removeLeftMargin {
+        margin: 0;
+      }
+    }
+  
+    #contentBox {
+      @extend .column;
+      @include reset-sp-tableCol;
+      @include make-sp-col(9, 9, 12 ,12, 0);
+      border-left: $border-default;
+      padding-top: $grid-gutter-width * .25;
+      padding-left: $grid-gutter-width;
+      
+      @media (max-width: $screen-sm-max) {
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+  
+    &.ms-dialog,
+    &.nexus-fullwidth,
+    &.nexus-landing-page,
+    &.nexus-home-page {
+      #sideNavBox {
+        display: none;
+      }
+  
+      #contentBox {
+        @include make-sp-col(12, 12, 12 ,12, 0);
+        border-left: none;
+  
+        .ms-dialog & {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+  
+  body.nexus-edit-mode {
+    h1.ms-core-pageTitle {
+      input.ms-long,
+      textarea.ms-long {
+        width: 100%;
+        padding: 0;
+      }
+  
+      .ms-formfieldvaluecontainer {
+        padding: 0;
+      }
+    }
+  
+    #contentRow {
+      padding-left: $grid-gutter-width * .5;
+      padding-right: $grid-gutter-width * .5;
+    }
+  }

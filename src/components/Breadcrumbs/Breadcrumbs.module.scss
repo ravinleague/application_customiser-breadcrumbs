@@ -1,0 +1,43 @@
+// @import '_corporate-variables.scss';
+// @import '_columns-corporate.scss';
+
+
+
+
+
+.breadcrumbs {
+  font-size: .875em;
+  line-height: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+//  padding: ($grid-gutter-width * .375) ($grid-gutter-width * .5);
+
+
+  a {
+    color: darkblue;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+
+  ul {
+    margin: 0;
+
+    
+    li {
+      display: inline;
+      margin-right: 5px;
+
+      &:after {
+        content: "›";
+        margin-left: 5px;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+}

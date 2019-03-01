@@ -1,0 +1,192 @@
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+$sidenav-sm-columns:    0;
+
+$main-md-columns:       12;
+$sidebar-md-columns:    3;
+$sidenav-md-columns:    2;
+
+// Base style properties
+$grid-gutter-width:     40px;
+$content-font-size:     14px;
+
+$orange:                #f4931c;
+$red:                   #ee3129;
+$blue:                  #009fd4;
+$green:                 #00b261;
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+// $container-tablet:             (710px + $grid-gutter-width);
+// //** For `$screen-sm-min` and up.
+// $container-sm:                 $container-tablet;
+
+// // Medium screen / desktop
+// $container-desktop:            (930px + $grid-gutter-width);
+// //** For `$screen-md-min` and up.
+// $container-md:                 $container-desktop;
+
+// // Large screen / wide desktop
+// $container-large-desktop:      (1130px + $grid-gutter-width);
+// //** For `$screen-lg-min` and up.
+// $container-lg:                 $container-large-desktop;
+
+$BodyText:                          #4D4D4D;
+$SubtleBodyText:                    #6D6E70;
+$StrongBodyText:                    #000000;
+$DisabledText:                      #B6B7B8;
+$SiteTitle:                         #4D4D4D;
+$WebPartHeading:                    #4D4D4D;
+$ErrorText:                         #BF0000;
+$AccentText:                        #000000;
+$SearchURL:                         #4D4D4D;
+$Hyperlink:                         #0058a6;
+$Hyperlinkfollowed:                 #663399;
+$HyperlinkActive:                   #1372CA;
+$CommandLinks:                      #6D6E70;
+$CommandLinksSecondary:             #000000;
+$CommandLinksHover:                 #1372CA;
+$CommandLinksPressed:               #000000;
+$CommandLinksDisabled:              #F0F0F1;
+$BackgroundOverlay:                 rgba(255,255,255, 0.85); //D8FFFFFF
+$DisabledBackground:                #FDFDFD;
+$PageBackground:                    #FFFFFF;
+$HeaderBackground:                  #FFFFFF;
+$FooterBackground:                  #6D6E70;
+$SelectionBackground:               rgba(156,206,240, 0.5); //7F9CCEF0
+$HoverBackground:                   rgba(205,230,247, 0.5); //7FCDE6F7
+$RowAccent:                         #6D6E70;
+$StrongLines:                       #6D6E70;
+$Lines:                             #B6B7B8;
+$SubtleLines:                       #F0F0F1;
+$DisabledLines:                     #F0F0F1;
+$AccentLines:                       #1372CA;
+$DialogBorder:                      #6D6E70;
+$Navigation:                        #4D4D4D;
+$NavigationAccent:                  #1372CA;
+$NavigationHover:                   #4D4D4D;
+$NavigationPressed:                 #FFFFFF;
+$NavigationHoverBackground:         #FFFFFF;
+$NavigationSelectedBackground:      #FFFFFF;
+$EmphasisText:                      #FFFFFF;
+$EmphasisBackground:                #6D6E70;
+$EmphasisHoverBackground:           #1372CA;
+$EmphasisBorder:                    #6D6E70;
+$EmphasisHoverBorder:               #1372CA;
+$SubtleEmphasisText:                #6D6E70;
+$SubtleEmphasisCommandLinks:        #000000;
+$SubtleEmphasisBackground:          #F0F0F1;
+$TopBarText:                        #B6B7B8;
+$TopBarBackground:                  #000000;
+$TopBarHoverText:                   #FFFFFF;
+$TopBarPressedText:                 #FFFFFF;
+$HeaderText:                        #4D4D4D;
+$HeaderSubtleText:                  #6D6E70;
+$HeaderDisableText:                 #B6B7B8;
+$HeaderNavigationText:              #6D6E70;
+$HeaderNavigationHoverText:         #1372CA;
+$HeaderNavigationPressedText:       #000000;
+$HeaderNavigationSelectedText:      #1372CA;
+$HeaderLines:                       #6D6E70;
+$HeaderStrongLines:                 #4D4D4D;
+$HeaderAccentLines:                 #4D4D4D;
+$HeaderSubtleLines:                 #B6B7B8;
+$HeaderDisabledLines:               #F0F0F1;
+$HeaderDisabledBackground:          #F0F0F1;
+$HeaderFlyoutBorder:                #B6B7B8;
+$HeaderSiteTitle:                   #4D4D4D;
+$SuiteBarBackground:                #000000;
+$SuiteBarHoverBackground:           #1372CA;
+$SuiteBarText:                      #FFFFFF;
+$SuiteBarDisabledText:              #6D6E70;
+$ButtonText:                        #4D4D4D;
+$ButtonDisabledText:                #B6B7B8;
+$ButtonBackground:                  #FFFFFF;
+$ButtonHoverBackground:             #f0f0f1;
+$ButtonPressedBackground:           #f0f0f1;
+$ButtonDisabledBackground:          #f0f0f1;
+$ButtonBorder:                      #B6B7B8;
+$ButtonHoverBorder:                 #F0F0F1;
+$ButtonPressedBorder:               #F0F0F1;
+$ButtonDisabledBorder:              #F0F0F1;
+$ButtonGlyph:                       #6D6E70;
+$ButtonGlyphActive:                 #1372CA;
+$ButtonGlyphDisabled:               #B6B7B8;
+$TileText:                          #FFFFFF;
+$TileBackgroundOverlay:             #1372CA;
+// $ContentAccent1:                    $green;
+$ContentAccent1:                    #33ff99;
+$ContentAccent2:                    #E9E0D6;
+$ContentAccent3:                    #F4E0E8;
+$ContentAccent4:                    #D4EFBE;
+$ContentAccent5:                    #7AE2E5;
+$ContentAccent6:                    #B9EFE9;
+
+//Extras for calendar/task list/tiles
+$ContentAccent7:                    #A08820;
+$ContentAccent8:                    #86538D;
+$ContentAccent9:                    #037367;
+
+// Colors
+$white:                 #fff;
+$black:                 #000;
+$gray-darker:           #121212;
+$gray-dark:             #333;
+$gray:                  #4d4d4d;
+$gray-light:            #6d6e70;
+$gray-lighter:          #b6b7b8;
+$gray-lightest:         #f0f0f1;
+
+$brand-primary:         $green;
+$body-bg-color:         $white;
+
+$zindex-navbar:            10 !default;
+$zindex-dropdown:          10 !default;
+$zindex-popover:           60 !default;
+$zindex-tooltip:           70 !default;
+$zindex-navbar-fixed:      30 !default;
+$zindex-modal-background:  40 !default;
+$zindex-modal:             50 !default;
+
+// Text & icon colours
+$highlight:             $brand-primary;
+$link-color:            $Hyperlink;
+$text-color:            $gray;
+
+// Images
+$site-logo: url('corporate-logo.png');
+
+// Components
+$border-default: 1px solid $gray-lighter;
+$border-dotted: 1px dashed $gray-lighter;
+$border-highlight: 1px solid $brand-primary;
+$border-radius-base: 6px;
+
+$nav-link-hover-bg: transparent;
+
+// Banner
+$sp-suitebar-ribbon-height: 65px;
+$banner-height:             80px;
+$banner-height-xs:          80px;
+$banner-bg:                 $white;
+
+// Breakpoint overrides
+$screen-xs-min:              480px;
+
+// Small screen / tablet
+$screen-sm-min:              768px + 1;
+
+// Medium screen / desktop
+$screen-md-min:              992px;
+
+// Large screen / wide desktop
+$screen-lg-min:              1200px;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);

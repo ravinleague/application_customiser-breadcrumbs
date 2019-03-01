@@ -1,0 +1,113 @@
+@mixin swatch-example($color: $brand-primary) {
+    background-color: $color;
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
+  
+  .dev-master-styles {
+    overflow: auto !important;
+  
+    main {
+      @include container-fixed;
+    }
+  
+    .section-title {
+      font-family: 'Courier New';
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 3em 0 .5em;
+    }
+  
+    .page-section {
+      margin: 60px 0;
+    }
+  
+    .swatch {
+      @include clearfix;
+  
+      .swatch-example-primary {
+        @include swatch-example;
+      }
+  
+      .swatch-example-accent-1{
+        @include swatch-example($ContentAccent1);
+      }
+  
+      .swatch-example-accent-2 {
+        @include swatch-example($ContentAccent2);
+      }
+  
+      .swatch-example-accent-3 {
+        @include swatch-example($ContentAccent3);
+      }
+  
+      .swatch-example-accent-4 {
+        @include swatch-example($ContentAccent4);
+      }
+  
+      .swatch-example-accent-5 {
+        @include swatch-example($ContentAccent5);
+      }
+  
+      .swatch-example-accent-6 {
+        @include swatch-example($ContentAccent6);
+      }
+  
+      .swatch-example-gray-darker {
+        @include swatch-example($gray-darker);
+      }
+  
+      .swatch-example-gray-dark {
+        @include swatch-example($gray-dark);
+      }
+  
+      .swatch-example-gray {
+        @include swatch-example($gray);
+      }
+  
+      .swatch-example-gray-light {
+        @include swatch-example($gray-light);
+      }
+  
+      .swatch-example-gray-lighter {
+        @include swatch-example($gray-lighter);
+      }
+  
+      .swatch-example-gray-lightest {
+        @include swatch-example($gray-lightest);
+      }
+    }
+  
+    .section-icons {
+      ul {
+        border-bottom: $border-default;
+        list-style: none;
+        margin-bottom: 1em;
+        padding-bottom: .5em;
+      }
+  
+      li {
+        font-size: 24px;
+        margin-right: .5em;
+        margin-bottom: .5em;
+        display: inline-block;
+      }
+    }
+  
+    .section-forms {
+      p {
+        margin-bottom: $grid-gutter-width * .5;
+      }
+  
+      li {
+        margin-bottom: .5em;
+      }
+    }
+  
+    .img-placeholder {
+      width: 100%;
+      height: 180px;
+      background-color: $gray-lighter;
+    }
+  }

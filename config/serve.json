@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://treasuryqldtest.sharepoint.com/sites/RaviComms",
+      "customActions": {
+        "c7d35134-13fb-427a-b516-907f4dd53a7a": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "breadcrumbs": {
+      "pageUrl": "https://treasuryqldtest.sharepoint.com/sites/RaviComms",
+      "customActions": {
+        "c7d35134-13fb-427a-b516-907f4dd53a7a": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}
