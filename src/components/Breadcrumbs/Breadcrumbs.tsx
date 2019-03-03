@@ -1,31 +1,54 @@
 import * as React from "react";
 import PropTypes from 'proptypes';
 import * as ReactDOM from "react-dom";
-import breadcrumbsUtils from './BreadcrumbsUtils';
-import classes from './Breadcrumbs.module.scss'
+import { SPComponentLoader } from '@microsoft/sp-loader';
+
+//import * as breadcrumbsUtils from './BreadcrumbsUtils';
+import styles from './Breadcrumbs.module.scss'
 import IBreadcrumbProps from "./IBreadcrumbProps";
 import IBreadcrumbState from "./IBreadcrumbState";
+require('sp-init');
+require('microsoft-ajax');
+require('sp-runtime');
+require('sharepoint');
+
 class Breadcrumbs extends React.Component<IBreadcrumbProps,IBreadcrumbState> {
+  getNavigationData = null;
   static propTypes: { navRootWebUrl: any; };
   constructor(props) {
     super(props);
 
     this.state = {
-     links:[{title:'AAA',url:''},{title:'BBB',url:''},{title:'',url:'CCC'}],
-     pageTitle:'AAAAA'
+     links:[{title:'One',url:''},{title:'Two',url:''},{title:'Three',url:''}],
+     pageTitle:'Current Page'
     };
   }
 
   componentDidMount() {
-    this.setState({pageTitle:'ABC',links:[{title:'AAA',url:''},{title:'BBB',url:''},{title:'',url:'CCC'}]})
+    SPComponentLoader.loadScript('https://jellypod.sharepoint.com/testnav/SiteAssets/utilities/BreadcrumbsUtils.js', 
+    { globalExportsName: 'getNavigationData' }).then((getNavigationData: any): void => {
+      this.getNavigationData = getNavigationData;  
+      getNavigationData("https://jellypod.sharepoint.com")
+          .then(data => {
+            if (data) {
+              this.setState({ pageTitle: data.pageTitle, links: data.links });
+            }
+          })
+          .catch(error => console.error(error));
+    });
+    
+
+    
+   
+   // this.setState({pageTitle:'ABC',links:[{title:'AAA',url:''},{title:'BBB',url:''},{title:'',url:'CCC'}]})
      //const { navRootWebUrl } = this.props;
-     breadcrumbsUtils.getNavigationData("https://treasuryqldtest.sharepoint.com")
-       .then(data => {
-         if (data) {
-           this.setState({ pageTitle: data.pageTitle, links: data.links });
-         }
-       })
-       .catch(error => console.error(error));
+    //  breadcrumbsUtils.getNavigationData("https://jellypod.sharepoint.com")
+    //    .then(data => {
+    //      if (data) {
+    //        this.setState({ pageTitle: data.pageTitle, links: data.links });
+    //      }
+    //    })
+    //    .catch(error => console.error(error));
   }
 
   public render(): React.ReactElement<any> {
@@ -42,12 +65,12 @@ class Breadcrumbs extends React.Component<IBreadcrumbProps,IBreadcrumbState> {
     }
 
     return (
-      <div className="breadcrumbs">
+      <div className={styles.breadcrumb}>
         <ul>
           {this.state.links.map(link => {
             return <li key={link.title}><a href={link.url}>{link.title}</a></li>;
           })}
-          <li>{this.props.pageTitle}</li>
+          <li>{this.state.pageTitle}</li>
         </ul>
       </div>
     );

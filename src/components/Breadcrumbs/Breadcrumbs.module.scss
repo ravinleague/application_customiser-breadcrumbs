@@ -1,43 +1,32 @@
-// @import '_corporate-variables.scss';
-// @import '_columns-corporate.scss';
+/* Style the list */
+.breadcrumb{
+  padding: 3px 3px;
+  list-style: none;
+  background: lightgray;
+}
 
+/* Display list items side by side */
+.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
 
-
-
-
-.breadcrumbs {
-  font-size: .875em;
+/* Add a slash symbol (/) before/behind each list item */
+.breadcrumb li+li:before {
+  padding: 8px;
   line-height: 1em;
-  margin-top: 0;
-  margin-bottom: 0;
-//  padding: ($grid-gutter-width * .375) ($grid-gutter-width * .5);
+  color: black;
+  content: ">";
+}
 
+/* Add a color to all links inside the list */
+.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
 
-  a {
-    color: darkblue;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-
-  ul {
-    margin: 0;
-
-    
-    li {
-      display: inline;
-      margin-right: 5px;
-
-      &:after {
-        content: "›";
-        margin-left: 5px;
-      }
-
-      &:last-child:after {
-        display: none;
-      }
-    }
-  }
+/* Add a color on mouse-over */
+.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
 }
