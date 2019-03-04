@@ -22,6 +22,7 @@
     "@pnp/sp": "^1.2.9",
     "@pnp/sp-clientsvc": "^1.2.9",
     "@pnp/sp-taxonomy": "^1.2.9",
+    "@types/es6-collections": "^0.5.31",
     "@types/es6-promise": "0.0.33",
     "@types/microsoft-ajax": "0.0.33",
     "@types/sharepoint": "^2016.1.2",

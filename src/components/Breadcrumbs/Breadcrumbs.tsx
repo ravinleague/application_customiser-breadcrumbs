@@ -11,44 +11,82 @@ require('sp-init');
 require('microsoft-ajax');
 require('sp-runtime');
 require('sharepoint');
-
+require('sp-publishing');
+require('sp-taxonomy');
+let navigationDataPromise = null;
 class Breadcrumbs extends React.Component<IBreadcrumbProps,IBreadcrumbState> {
-  getNavigationData = null;
   static propTypes: { navRootWebUrl: any; };
   constructor(props) {
     super(props);
 
     this.state = {
-     links:[{title:'One',url:''},{title:'Two',url:''},{title:'Three',url:''}],
-     pageTitle:'Current Page'
+     links:[{title:'Home',url:''},{title:'Employee centre',url:''},{title:'HR Resources',url:''}],
+     pageTitle:'HR business partners'
     };
   }
 
   componentDidMount() {
-    SPComponentLoader.loadScript('https://jellypod.sharepoint.com/testnav/SiteAssets/utilities/BreadcrumbsUtils.js', 
-    { globalExportsName: 'getNavigationData' }).then((getNavigationData: any): void => {
-      this.getNavigationData = getNavigationData;  
-      getNavigationData("https://jellypod.sharepoint.com")
-          .then(data => {
-            if (data) {
-              this.setState({ pageTitle: data.pageTitle, links: data.links });
-            }
-          })
-          .catch(error => console.error(error));
-    });
+    const siteURL = "https://treasuryqldtest.sharepoint.com/sites/corporate2";
+    //this.getNavigationData(siteURL);
+    }
+
+    getCachedNavigationData(navRootWebUrl) {
+      if (navigationDataPromise === null) {
+        navigationDataPromise = this.getNavigationDataAfterSod(navRootWebUrl);
+      }
     
+      return navigationDataPromise;
+    }
 
     
-   
-   // this.setState({pageTitle:'ABC',links:[{title:'AAA',url:''},{title:'BBB',url:''},{title:'',url:'CCC'}]})
-     //const { navRootWebUrl } = this.props;
-    //  breadcrumbsUtils.getNavigationData("https://jellypod.sharepoint.com")
-    //    .then(data => {
-    //      if (data) {
-    //        this.setState({ pageTitle: data.pageTitle, links: data.links });
-    //      }
-    //    })
-    //    .catch(error => console.error(error));
+
+  getNavigationData(navRootWebUrl) {
+  //   if (typeof _spFriendlyUrlPageContextInfo === 'undefined') {
+  //     return null;
+  //   }
+  // console.log(_spFriendlyUrlPageContextInfo);
+  //   const webUrl = navRootWebUrl || _spPageContextInfo.webAbsoluteUrl;
+  //   const ctx = new SP.ClientContext(webUrl);
+  //   const webInfo = { title: 'Home', url: webUrl };
+  //   const pageTitle = _spFriendlyUrlPageContextInfo.title;
+  //   const termId = _spFriendlyUrlPageContextInfo.termId;
+  //   console.log(pageTitle,termId);
+
+          var context =  new SP.ClientContext(navRootWebUrl);
+        // Get the default Term Store for context
+        var session = SP.Taxonomy.TaxonomySession.getTaxonomySession(context);
+        var termStores = session.get_termStores();
+
+        var termStore = termStores.getByName("Taxonomy_nlttXz0jheSz00iK2W2QZg==");
+        var termSet = termStore.getTermSet(new SP.Guid("481581ac-be39-4ed9-bb27-7fce69856083"))
+        var terms = termSet.getAllTerms();
+        context.load(terms);
+
+        context.executeQueryAsync(function(){
+
+        var termEnumerator = terms.getEnumerator();
+
+        var termList = "Terms: \n";
+
+            while(termEnumerator.moveNext()){
+
+                var currentTerm = termEnumerator.get_current();
+
+                termList += currentTerm.get_name() + "\n";
+
+            } 
+
+              //alert(termList);
+
+        },function(sender,args){
+
+              console.log(args.get_message());
+
+        });
+  }
+
+  getNavigationDataAfterSod(navRootWebUrl) {
+    return this.getNavigationData(navRootWebUrl);
   }
 
   public render(): React.ReactElement<any> {

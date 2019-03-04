@@ -13,39 +13,44 @@
   },
   "externals": {
     "sp-init": {
-      "path": "https://jellypod.sharepoint.com/_layouts/15/init.js",
+      "path": "https://treasuryqldtest.sharepoint.com/_layouts/15/init.js",
       "globalName": "$_global_init"
     },
     "microsoft-ajax": {
-      "path": "https://jellypod.sharepoint.com/_layouts/15/MicrosoftAjax.js",
+      "path": "https://treasuryqldtest.sharepoint.com/_layouts/15/MicrosoftAjax.js",
       "globalName": "Sys",
       "globalDependencies": [
         "sp-init"
       ]
     },
     "sp-runtime": {
-      "path": "https://jellypod.sharepoint.com/_layouts/15/SP.Runtime.js",
+      "path": "https://treasuryqldtest.sharepoint.com/_layouts/15/SP.Runtime.js",
       "globalName": "SP",
       "globalDependencies": [
         "microsoft-ajax"
       ]
     },
     "sharepoint": {
-      "path": "https://jellypod.sharepoint.com/_layouts/15/SP.js",
+      "path": "https://treasuryqldtest.sharepoint.com/_layouts/15/SP.js",
       "globalName": "SP",
       "globalDependencies": [
         "sp-runtime"
       ]
     },
+
+    "sp-publishing": {
+      "path": "https://treasuryqldtest.sharepoint.com/_layouts/15/SP.publishing.js",
+      "globalName": "SP"
+    },
     "sp-taxonomy": {
-      "path": "https://jellypod.sharepoint.com/_layouts/15/SP.Taxonomy.js",
+      "path": "https://treasuryqldtest.sharepoint.com/_layouts/15/SP.Taxonomy.js",
       "globalName": "SP",
       "globalDependencies": [
         "sharepoint"
       ]
     },
     "breadcrumb-utils": {
-      "path": "https://jellypod.sharepoint.com/testnav/SiteAssets/utilities/BreadcrumbsUtils.js",
+      "path": "https://treasuryqldtest.sharepoint.com/testnav/SiteAssets/utilities/BreadcrumbsUtils.js",
       "globalName": "BreadcrumbUtils"
     }
   },
@@ -53,3 +58,4 @@
     "BreadcrumbsApplicationCustomizerStrings": "lib/extensions/breadcrumbs/loc/{locale}.js"
   }
 }
+

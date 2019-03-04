@@ -11,6 +11,11 @@ import * as strings from 'BreadcrumbsApplicationCustomizerStrings';
 
 const LOG_SOURCE: string = 'BreadcrumbsApplicationCustomizer';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import { SPComponentLoader } from "@microsoft/sp-loader";
+require('sp-init');
+require('microsoft-ajax');
+require('sp-runtime');
+require('sharepoint');
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
  * it will be deserialized into the BaseExtension.properties object.
@@ -28,7 +33,7 @@ export default class BreadcrumbsApplicationCustomizer
   @override
   public onInit(): Promise<void> {
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
-
+    SPComponentLoader.loadCss("https://treasuryqldtest.sharepoint.com/SiteAssets/MegaMenuCSS.css");
     let placeholder:PlaceholderContent;
     placeholder = this.context.placeholderProvider.tryCreateContent(PlaceholderName.Top);
 

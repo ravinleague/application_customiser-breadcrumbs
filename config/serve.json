@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://jellypod.sharepoint.com/testnav",
+      "pageUrl": "https://treasuryqldtest.sharepoint.com/sites/ravicomms",
       "customActions": {
         "c7d35134-13fb-427a-b516-907f4dd53a7a": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -15,7 +15,7 @@
       }
     },
     "breadcrumbs": {
-      "pageUrl": "https://jellypod.sharepoint.com/testnav",
+      "pageUrl": "https://treasuryqldtest.sharepoint.com/sites/ravicomms",
       "customActions": {
         "c7d35134-13fb-427a-b516-907f4dd53a7a": {
           "location": "ClientSideExtension.ApplicationCustomizer",
